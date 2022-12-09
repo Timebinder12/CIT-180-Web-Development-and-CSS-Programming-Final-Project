@@ -1,0 +1,225 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Play', sans-serif;	
+}
+p{
+	font-size:1.5em;
+	background: rgba(189,255,255,.8);
+	border-radius:15px;
+	padding:10px;
+}
+div > p{
+	background:none;
+}
+
+h1{
+    text-align:center;
+	text-shadow:1px 1px black;
+	color:white;
+	font-size:1.5em;
+}
+h2{
+    text-align:center;
+	color:white;
+	text-shadow:1px 1px 1px black;
+	background: #b4e391; /* Old browsers */
+	background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%);
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow:3px 3px 3px black;
+}
+aside >img{
+    width:300px;
+	margin-left:30px;
+	margin-top:15px;
+	margin-bottom:15px;
+	border:8px groove silver;
+}
+aside{
+margin-top:15px;
+margin-left:10px;
+background-color: #6DB3AB;
+box-shadow:3px 3px 3px black;
+
+}
+section > p{
+    margin-left:15px;
+    margin-right:15px;
+}
+header{
+    padding:10px;
+	border-radius:15px;
+	box-shadow:3px 3px 3px black;
+	background: #b4e391; /* Old browsers */
+	background: linear-gradient(to bottom,  #b4e391 0%,#61c419 50%,#b4e391 100%);
+	margin-bottom:10px;
+	animation:slideIn 3s;
+	animation-timing-function: ease;
+}
+nav{
+    text-decoration: none;
+    height:auto;
+    background-color: #6DB3AB;
+    margin-top:10px;
+    padding:10px;
+    border-radius:15px;
+    box-shadow:3px 3px black;
+	font-size:1.5em;
+	margin-right:10px;
+}
+nav li{
+    list-style:none;
+    padding:10px;
+    border-bottom:2px solid black;
+}
+nav li:hover{
+	background-color:aqua;
+}
+nav li a:link, nav li a:visited{
+    text-decoration: none;
+    display:block;
+    color:white;
+}
+.parallax {
+    background-image: url("../media/Minecraft.jpg");
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .icon-bar {
+    width: 100%; /* Full-width */
+    background: #b4e391;
+    overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+    float: left; 
+    text-align: center; 
+    width: 33.33%; 
+    padding: 12px 0; 
+    transition: all 0.3s ease; 
+    color: white; 
+    font-size: 36px; 
+}
+.icon-bar a:hover {
+    background-color:aqua; /* Add a hover color */
+}
+summary{
+	color:white;
+	text-shadow:1px 1px black;
+}
+details{
+	margin-top:15px;
+	margin-left:10px;
+	margin-bottom:15px;
+	font-size:1.5em;
+	color:white;
+}
+details > p{
+	color:black;
+	font-size:1.0em;
+}
+footer{
+	margin-top:15px;
+	padding:7px;
+}
+footer >small{
+	background:rgba(245,245,245,.8);
+}
+@keyframes slideIn{
+	from{
+		margin-left:200%;
+		width:300%;
+	}
+	to{
+		margin-left:0%;
+		width:100%;
+	}
+}
+
+.title{ grid-area:head;}
+.menu{ grid-area:nav;}
+.content{ grid-area:main;}
+.extra{ grid-area:aside;}
+.details{ grid-area:details;}
+.images{ grid-area:images;}
+.contact{ grid-area:foot;}
+
+/* For mobile phones: */
+
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+		'head head head'
+		'nav nav nav'
+		'main main main'
+		'aside aside aside'
+		'details details details'
+		'images images images'
+		'foot foot foot';
+		grid-gap:0px;
+		padding:4px;
+	}
+	#block{
+		display:none;
+	}
+	div img{
+		width:250px;
+		height:175px;
+	}
+
+/* For tablets: */
+@media only screen and (min-width:481px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+		'head head head'
+		'nav nav nav'
+		'main main main'
+		'aside aside aside'
+		'details details details'
+		'images images images'
+		'foot foot foot';
+		grid-gap:0px;
+		padding:5px;
+	}
+	#beach{
+		display:none;
+	}
+	#block{
+		display:none;
+	}
+}
+
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+	.grid-container{
+		display:grid;
+		grid-template-areas:
+		'head head head head head head'
+		'nav main main main main aside'
+		'nav main main main main aside'
+		'details details details details details details'
+		'images images images images images images'
+		'foot foot foot foot foot foot';
+		grid-gap:0px;
+		padding:10px;
+		
+	}
+	#beach{
+		display:inline;
+	}
+	#block{
+		display:inline;
+	}
+	div img{
+		width:750px;
+		height:450px;
+	}
+}
